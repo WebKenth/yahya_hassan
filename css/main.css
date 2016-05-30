@@ -13,10 +13,12 @@ html, body {
 }
 
 #phaser-div{
-	width:1024px;
-	position:absolute;
-	left:50%;
-	margin: 0 0 0 -512px;
+  width: 1024px;
+  position: absolute;
+  left: 50%;
+  border: 10px solid rgba(255, 255, 255, 0.16);
+  border-radius: 5px;
+  margin: 0 0 0 -512px;
 }
 
 .info{

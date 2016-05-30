@@ -3,57 +3,38 @@
 <head>
     <meta charset="utf-8">
     <title></title>
-    <!-- build:css main.min.css -->
-        <link rel="stylesheet" href="css/main.css">
-    <!-- /build -->
+    <script type="text/javascript" src="js/lib/phaser.min.js"></script>
+    <script type="text/javascript" src="js/entities/player.js"></script>
+    <script type="text/javascript" src="js/entities/enemy.js"></script>
+    <script type="text/javascript" src="js/states/boot.js"></script>
+    <script type="text/javascript" src="js/states/preload.js"></script>
+    <script type="text/javascript" src="js/states/gametitle.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/states/gameover.js"></script>
+    <script type="text/javascript">
+        (function() {
+                game = new Phaser.Game(
+                    1024,
+                    768, 
+                    Phaser.AUTO, 
+                    'phaser-div'
+                );
+
+                //Add all states
+                game.state.add("Boot", Boot);
+                game.state.add("Preload", Preload);
+                game.state.add("GameTitle", GameTitle);
+                game.state.add("Main", Main);
+                game.state.add("GameOver", GameOver);
+
+                //Start the first state
+                game.state.start("Boot");
+
+        })();
+    </script>
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
     <div id="phaser-div"></div>
-  
-    <!-- LIBRARIES -->
-    <script src="js/lib/phaser-new.js"></script>
-    <script src="js/lib/phaser.patch.js"></script>
-    <!-- <script src="js/lib/phaser.min.js"></script> -->
-
-    <!-- STATES -->
-    <script src="js/states/bootstate.js"></script>
-    <script src="js/states/loaderstate.js"></script>
-    <script src="js/states/mainmenustate.js"></script>
-    <script src="js/states/gamestate.js"></script>
-    <script src="js/states/gameoverstate.js"></script>
-
-    <!-- RESOURCES -->
-    <script src="js/resources.js"></script>
-    <script src="js/waves.js"></script>
-    <script src="js/points.js"></script>
-
-    <!-- MANAGERS -->
-    <script src="js/managers/collisionmanager.js"></script>
-    <script src="js/managers/inputmanager.js"></script>
-    <script src="js/managers/inventorymanager.js"></script>
-    <script src="js/managers/guimanager.js"></script>
-    <script src="js/managers/wavemanager.js"></script>
-
-    <!-- ENTITIES -->
-    <script src="js/entities/player.js"></script>
-    <script src="js/entities/bullet.js"></script>
-    <script src="js/entities/bear.js"></script>
-    <script src="js/entities/cane.js"></script>
-    <script src="js/entities/corn.js"></script>
-    <script src="js/entities/turret.js"></script>
-    <script src="js/entities/mine.js"></script>
-    <script src="js/entities/tooth.js"></script>
-    <script src="js/entities/explosion.js"></script>
-
-    <!-- GUI -->
-    <script src="js/gui/toolbar.js"></script>
-    <script src="js/gui/toolbar_slot.js"></script>
-    <script src="js/gui/hud.js"></script>
-    <script src="js/gui/menuscreen.js"></script>
-
-
-    <!-- MAIN -->
-    <script src="js/main.js"></script>
-
 </body>
 </html>
